@@ -1,10 +1,10 @@
 <?php
-// Set variable with some text
-$text = "Ten green bottles hanging on the wall, ten green bottles hanging on the wall and if one green bottle should accidentally fall, there'll be nine green bottles hanging on the wall...";
-// User pass by GET parameter a word to censor
-$forbidden_word = $_GET['forbidden_word'];
-// New length after inserted the forbidden word
-$new_length = str_replace($forbidden_word, '***', $text);
+    // Set variable with some text
+    $text = "Ten green bottles hanging on the wall, ten green bottles hanging on the wall and if one green bottle should accidentally fall, there'll be nine green bottles hanging on the wall...";
+    // User pass by GET parameter a word to censor
+    $forbidden_word = $_GET['forbidden_word'];
+    // Set new text replacing the forbidden word with '***' in $text
+    $new_text = str_replace($forbidden_word, '***', $text);
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ $new_length = str_replace($forbidden_word, '***', $text);
         My paragraph length is: <?= strlen($text); ?>
     </span>
     <!-- /Print the paragraph and its length. -->
-    <!-- Replace the forbidden word in the paragraph with '***', so print again the paragraph and its length. -->
+    <!-- Print again the paragraph and its length after changes. -->
     <p>
-        My paragraph with forbidden word is: <?= str_replace($forbidden_word, '***', $text); ?>
+        My paragraph with forbidden word is: <?= $new_text; ?>
     </p>
     <span>
-        My paragraph length with forbidden word is now: <?= strlen($new_length) ?>
+        My paragraph length with forbidden word is now: <?= strlen($new_text) ?>
     </span>
-    <!-- /Replace the forbidden word in the paragraph with '***', so print again the paragraph and its length. -->
+    <!-- /Print again the paragraph and its length after changes. -->
 </body>
 
 </html>
